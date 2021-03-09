@@ -13,7 +13,8 @@ Although this is my first, series, Kotlin and Jetpack Compose products, I don't,
 ## :camera_flash: Screenshots
 
 <img src="/results/screenshot_1.png" width="260">&emsp;<img src="/results/screenshot_2.png" width="260"><br>
-<video><source src="/results/movie.mp4" type="video/mp4"></video>
+
+[Movie](https://github.com/yak1ex/android-dev-challenge-compose2/blob/main/results/video.mp4?raw=true)
 
 ## License
 ```
