@@ -154,27 +154,37 @@ fun MyApp(
 @Composable
 fun AnimatedText(text: String) {
     val typography = MaterialTheme.typography
-    var prevText by remember { mutableStateOf("") }
+    var textT by remember { mutableStateOf("") }
+    var textF by remember { mutableStateOf("") }
     var flip by remember { mutableStateOf(false) }
-    flip = if (text == prevText) flip else !flip
+    if (flip) {
+        if(textT != text) {
+            textF = text
+            flip = !flip
+        }
+    } else {
+        if(textF != text) {
+            textT = text
+            flip = !flip
+        }
+    }
     Crossfade(
         flip,
         animationSpec = tween(800)
     ) {
         if (it) {
             Text(
-                text,
+                textT,
                 style = typography.h2
             )
         } else {
             Text(
-                text,
+                textF,
                 style = typography.h2,
                 color = Red
             )
         }
     }
-    prevText = text
 }
 
 @ExperimentalAnimationApi
