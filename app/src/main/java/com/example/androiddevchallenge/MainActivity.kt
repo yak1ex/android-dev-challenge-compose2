@@ -158,12 +158,12 @@ fun AnimatedText(text: String) {
     var textF by remember { mutableStateOf("") }
     var flip by remember { mutableStateOf(false) }
     if (flip) {
-        if(textT != text) {
+        if (textT != text) {
             textF = text
             flip = !flip
         }
     } else {
-        if(textF != text) {
+        if (textF != text) {
             textT = text
             flip = !flip
         }
