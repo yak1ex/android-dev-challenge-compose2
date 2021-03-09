@@ -161,7 +161,7 @@ fun AnimatedText(text: String) {
         flip,
         animationSpec = tween(800)
     ) {
-        if(it) {
+        if (it) {
             Text(
                 text,
                 style = typography.h2
