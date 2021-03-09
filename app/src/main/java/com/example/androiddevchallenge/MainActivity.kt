@@ -85,7 +85,7 @@ class MainActivity : AppCompatActivity() {
             _active.value = false
         }
     }
-    private fun set(newCounter : Int) {
+    private fun set(newCounter: Int) {
         if (!_active.value!!) {
             _counter.value = newCounter
         }
@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MyTheme {
-                MyApp(counter, onUpdate = { set(it) }, active, onStart = { start() }, onPause = { pause() } )
+                MyApp(counter, onUpdate = { set(it) }, active, onStart = { start() }, onPause = { pause() })
             }
         }
     }
@@ -104,15 +104,15 @@ class MainActivity : AppCompatActivity() {
 @ExperimentalAnimationApi
 @Composable
 fun MyApp(
-    counter_ : LiveData<Int> = MutableLiveData(0),
-    onUpdate : (Int) -> Unit = {},
-    active_ : LiveData<Boolean> = MutableLiveData(false),
-    onStart : () -> Unit = {},
-    onPause : () -> Unit = {}
+    counter_: LiveData<Int> = MutableLiveData(0),
+    onUpdate: (Int) -> Unit = {},
+    active_: LiveData<Boolean> = MutableLiveData(false),
+    onStart: () -> Unit = {},
+    onPause: () -> Unit = {}
 ) {
     val typography = MaterialTheme.typography
-    val counter : Int by counter_.observeAsState(0)
-    val active : Boolean by active_.observeAsState(false)
+    val counter: Int by counter_.observeAsState(0)
+    val active: Boolean by active_.observeAsState(false)
     Surface(color = MaterialTheme.colors.background) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally
